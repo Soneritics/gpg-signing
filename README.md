@@ -12,6 +12,7 @@ Tested with:
 | Windows | Smartgit           | Github   |
 | MacOS   | CLI                | Github   |
 | MacOS   | Smartgit           | Github   |
+| MacOS   | Visual Studio Code | Github   |
 
 ---
 
@@ -69,6 +70,7 @@ First, install GPG.
 Open a terminal and execute the following commands:
 ```
 brew install gpg
+brew cask install gpg-suite
 ```
 
 Next, you should add a line to your profile file.
@@ -112,6 +114,7 @@ See the chapter `Adding keys to a platform` in this Readme file.
 Run the following command in the terminal to add signing to the global git configuration:
 ```
 git config --global commit.gpgsign true
+git config --global gpg.program /usr/local/MacGPG2/bin/gpg2
 ```
 
 Validate the settings by opening a terminal and executing the following command: `git config -l`.
