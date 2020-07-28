@@ -11,6 +11,7 @@ Tested with:
 | Windows | Visual Studio Code | Github   |
 | Windows | Smartgit           | Github   |
 | MacOS   | CLI                | Github   |
+| MacOS   | Smartgit           | Github   |
 
 ---
 
@@ -65,9 +66,26 @@ Example output:
 ### MacOS
 #### Step 1: Download GnuPG
 First, install GPG.
-Open a terminal and execute the following command:
+Open a terminal and execute the following commands:
 ```
 brew install gpg
+```
+
+Next, you should add a line to your profile file.
+This can be either of these files:
+* ~/.profile
+* ~/.bash_profile
+* ~/.zshrc
+
+In this example the (currently) newest shell (zsh) is used.
+Execute the following command in the terminal to open the profile:
+```
+nano ~/.zshrc
+```
+
+Add the following line, save (CTRL+O), quit (CTRL+X) and completely close the terminal (CMD+Q).
+```
+export GPG_TTY=$(tty)
 ```
 
 #### Step 2: Generate key
@@ -98,6 +116,7 @@ git config --global commit.gpgsign true
 
 Validate the settings by opening a terminal and executing the following command: `git config -l`.
 This will list all of the settings, and should include the `gpgsign` setting.
+Also, the `email` setting should be the same as your key's.
 
 ---
 
