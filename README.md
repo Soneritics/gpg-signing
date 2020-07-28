@@ -10,6 +10,7 @@ Tested with:
 | Windows | Visual Studio      | Github   |
 | Windows | Visual Studio Code | Github   |
 | Windows | Smartgit           | Github   |
+| MacOS   | CLI                | Github   |
 
 ---
 
@@ -56,13 +57,47 @@ An example of this file:
 ```
 
 Validate the settings by opening a command shell and executing the following command: `git config -l`.
-This will list all of the settings, and should include the `gpgsign` setting.
+This will list all of the settings, and should include the `gpgsign` and `program` setting.
 
 Example output:
 ![git config -l](img/03.GitConfigList.png)
 
 ### MacOS
-_Will be added in the future._
+#### Step 1: Download GnuPG
+First, install GPG.
+Open a terminal and execute the following command:
+```
+brew install gpg
+```
+
+#### Step 2: Generate key
+Open a terminal and execute the following command:
+```
+gpg --gen-key
+```
+
+#### Step 3: Export & copy key
+In a terminal, execute the following command to get an overview of your keys:
+```
+gpg --list-keys
+```
+
+The email address of the key listed, must be used in the next command:
+```
+gpg --armor --export {emailaddress}
+```
+
+Copy all the text in the window and use this to add this public key to a (git) platform like Github.
+See the chapter `Adding keys to a platform` in this Readme file.
+
+#### Step 4: Set signing with GPG key for commits in Git global settings
+Run the following command in the terminal to add signing to the global git configuration:
+```
+git config --global commit.gpgsign true
+```
+
+Validate the settings by opening a terminal and executing the following command: `git config -l`.
+This will list all of the settings, and should include the `gpgsign` setting.
 
 ---
 
