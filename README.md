@@ -67,7 +67,10 @@ _Will be added in the future._
 
 ## Adding keys to a platform
 ### Github
-_Will be added in the future._
+For this, the contents of the public key must be copied to the clipboard.
+Go to Github, click you profile icon, go to settings and open `SSH and GPG keys`.
+On the bottom of the page click the button `New GPG key`.
+Paste the GPG key and add it.
 
 ### Azure DevOps
 _Will be added in the future._
