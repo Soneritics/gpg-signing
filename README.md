@@ -9,6 +9,7 @@ Tested with:
 | Windows | CLI                | Github   |
 | Windows | Visual Studio      | Github   |
 | Windows | Visual Studio Code | Github   |
+| Windows | Smartgit           | Github   |
 
 ---
 
